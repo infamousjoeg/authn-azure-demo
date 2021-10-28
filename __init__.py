@@ -19,7 +19,7 @@ def get_azure_ad_token(resource_uri):
 
 
 def get_conjur_access_token(azure_ad_token):
-    conjur_auth_uri = f"https://conjur.joegarcia.dev/authn-azure/conjur-demo/cyberarkdemo/host%2Fcloud%2Fazure%2Ffunction"
+    conjur_auth_uri = f"https://conjur.joegarcia.dev/authn-azure/conjur-demo/cyberarkdemo/host%2Fcloud%2Fazure%2Ffunction%2Fconjur-demo/authenticate"
     req_headers = {'Content-Type':"application/x-www-form-urlencoded"}
 
     resp = requests.post(conjur_auth_uri, headers=req_headers, data={'jwt':azure_ad_token})
